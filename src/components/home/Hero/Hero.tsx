@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Store() {
+export const Hero = () => {
   return (
     <div>
-      <h1>Store</h1>
+      <h1></h1>Hero
     </div>
   );
-}
+};
