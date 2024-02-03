@@ -1,7 +1,11 @@
-import { Inter } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
+import './globals.css';
 import { Footer, Header } from 'app/components';
 
-const inter = Inter({ subsets: ['latin'] });
+const dm_sans = DM_Sans({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+});
 
 export default function RootLayout({
   children,
@@ -10,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={dm_sans.className}>
         <Header />
         {children}
         <Footer />
