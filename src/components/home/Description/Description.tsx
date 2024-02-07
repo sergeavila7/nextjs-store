@@ -15,7 +15,7 @@ export const Description = () => {
   });
 
   return (
-    <section className='grid grid-cols-2 gap-8 max-w-[1100px] mx-auto my-24 p-8'>
+    <section className='grid grid-cols-2 gap-8 max-w-[1100px] mx-auto my-20 p-8'>
       <button onClick={handleClick}>
         <div className='relative w-[500px] h-[300px]'>
           <Image

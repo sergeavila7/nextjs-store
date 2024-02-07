@@ -23,8 +23,10 @@ export const Header = () => {
       <nav>
         <ul className='flex-center gap-8'>
           {items.map((item, index) => (
-            <li className='text-2xl text-blue-400' key={index}>
-              <Link href={item.href}>{item.title}</Link>
+            <li className='text-2xl font-semibold text-blue-400' key={index}>
+              <Link href={item.href} scroll={false}>
+                {item.title}
+              </Link>
             </li>
           ))}
         </ul>

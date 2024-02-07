@@ -1,6 +1,6 @@
 import { DM_Sans } from 'next/font/google';
 import './globals.css';
-import { Footer, Header } from 'app/components';
+import { Description, Footer, Header, Hero } from 'app/components';
 
 const dm_sans = DM_Sans({
   weight: ['400', '500', '600', '700'],
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={dm_sans.className}>
+      <body className={dm_sans.className} suppressHydrationWarning={true}>
         <Header />
         {children}
         <Footer />
