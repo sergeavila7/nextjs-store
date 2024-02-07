@@ -9,7 +9,6 @@ interface CategoriesProps {
 
 export default function Categories(props: CategoriesProps) {
   const { categories } = props.params;
-  console.log(props);
 
   return (
     <div>

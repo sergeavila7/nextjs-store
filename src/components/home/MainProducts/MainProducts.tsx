@@ -27,7 +27,7 @@ export const MainProducts = async () => {
         ✨ New products released!
       </h3>
       <div className='grid grid-cols-2 grid-rows-2 w-full mt-14'>
-        {products?.map((product: any) => {
+        {products.map((product: any) => {
           const imageSrc = product.images[0].src;
           return (
             <article className='relative z-10 min-h-[400px]' key={product.id}>
