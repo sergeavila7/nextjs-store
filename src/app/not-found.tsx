@@ -26,7 +26,7 @@ export default function NotFound() {
         Pero nuestra tienda esta abierta las 24/7
       </p>
       <Link
-        className={`block font-bold py-2 px-4 border-none rounded-md mt-8 hover:text-lg  ${bgGradient}`}
+        className={`block font-bold py-2 px-4 border-none rounded-md mt-8 hover:text-lg ${bgGradient}`}
         href='/store'
       >
         !Vamos de compras!
