@@ -1,3 +1,5 @@
+import { ProductsWrapper } from 'app/components';
+import { getProducts } from 'app/services/shopify/indext';
 import React from 'react';
 
 interface CategoriesProps {
@@ -7,12 +9,9 @@ interface CategoriesProps {
   };
 }
 
-export default function Categories(props: CategoriesProps) {
+export default async function Categories(props: CategoriesProps) {
+  const products = await getProducts();
   const { categories } = props.params;
 
-  return (
-    <div>
-      <h1>Categoria dinamica: {categories}</h1>
-    </div>
-  );
+  return <ProductsWrapper products={products} />;
 }

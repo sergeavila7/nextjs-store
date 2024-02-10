@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import { getProducts } from 'app/services/shopify/indext';
 
 export const MainProducts = async () => {
-  const products = await getProducts();
+  const response = await fetch('http://localhost:3000/api');
+  const { products } = await response.json();
 
   return (
     <section className='w-full'>
