@@ -1,5 +1,5 @@
 import { ProductsWrapper } from 'app/components';
-import { getProducts } from 'app/services/shopify/indext';
+import { getProducts } from 'app/services/shopify/products';
 import React from 'react';
 
 interface CategoriesProps {
