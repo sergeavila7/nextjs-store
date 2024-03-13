@@ -8,13 +8,7 @@ interface ErrorProps {
 }
 
 export default function Error({ error, reset }: ErrorProps) {
- 
- useEffect(() => {
-console.log(error);
-
- }, [])
- 
-    return (
+  return (
     <div className='p-5'>
       <h1>:c</h1>
       <p>Error</p>

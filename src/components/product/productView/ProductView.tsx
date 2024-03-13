@@ -6,8 +6,8 @@ interface ProductViewProps {
 
 export const ProductView = ({ product }: ProductViewProps) => {
   return (
-    <main>
-      <section>
+    <main className='max-w-1200 mx-auto grid grid-cols-2 gap-y-20 mt-20'>
+      <section className='justify-self-end rounded-lg'>
         <Image
           loading='eager'
           src={product.image}

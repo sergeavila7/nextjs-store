@@ -34,3 +34,22 @@ export const getProducts = async (
     console.log(error);
   }
 };
+
+export const getMainProducts = async (
+) => {
+  try {
+    const response = await fetch(shopifyUrls.products.mainProducts, {
+      headers:{
+        'X-Shopify-Access-Token': env.SHOPIFY_TOKEN,
+      },
+      cache: 'force-cache',
+      next: {
+        tags: ['main-products']
+      }
+    });
+    const { products } = await response.json();
+    return products;
+  } catch (error) {
+    console.log(error);
+  }
+};
