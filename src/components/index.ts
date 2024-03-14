@@ -7,3 +7,5 @@ export { MainProducts } from './home/MainProducts/MainProducts';
 export { ProductCard } from './store/ProductCard/ProductCard';
 export { ProductsWrapper } from './store/ProductWrapper/ProductWrapper';
 export { ProductView } from './product/productView/ProductView';
+
+export { SanitizeHTML } from './shared/SanitezeHTML/SanitizeHTML';

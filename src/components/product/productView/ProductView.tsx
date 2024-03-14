@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ProductViewItemsOrder } from './ProductViewItemsOrder';
+import { SanitizeHTML } from 'app/components';
 interface ProductViewProps {
   product: ProductType;
 }
@@ -20,7 +21,9 @@ export const ProductView = ({ product }: ProductViewProps) => {
       <section>
         <h1>{product.title}</h1>
         <p>{product.tags}</p>
-        <p>{product.description}</p>
+        <SanitizeHTML tag='p' >
+          {product.description}
+        </SanitizeHTML>
         <span>$ {product.price}</span>
         <ProductViewItemsOrder maxQuantity={product.quantity} />
       </section>

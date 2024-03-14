@@ -11,7 +11,7 @@ interface ProductPageProps {
 export default async function ProductPage({ searchParams }: ProductPageProps) {
   const id = searchParams.id;
   const products = await getProducts(id);
-  const product = products ? products[0] : null;
+  const product = products ? products[1] : null;
 
   if (!id) {
     redirect('/store');
