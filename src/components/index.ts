@@ -9,3 +9,5 @@ export { ProductsWrapper } from './store/ProductWrapper/ProductWrapper';
 export { ProductView } from './product/productView/ProductView';
 
 export { SanitizeHTML } from './shared/SanitezeHTML/SanitizeHTML';
+
+export { NewAccountForm } from './signup/NewAccountForm/NewAccountForm';
