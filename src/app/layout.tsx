@@ -1,24 +1,25 @@
-import { DM_Sans } from 'next/font/google';
-import './globals.css';
-import { Footer, Header, Hero } from 'app/components';
+import { Roboto } from 'next/font/google'
+import { Header } from 'app/components/shared/Header'
+import { Footer } from 'app/components/shared/Footer'
+import 'app/sass/globals.sass'
 
-const dm_sans = DM_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-});
+const roboto = Roboto({
+  weight: ["100", "300", "500", "700"],
+  subsets: ["latin"],
+})
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang='en'>
-      <body className={dm_sans.className} suppressHydrationWarning={true}>
+    <html lang="en">
+      <body className={roboto.className}>
         <Header />
         {children}
         <Footer />
       </body>
     </html>
-  );
+  )
 }

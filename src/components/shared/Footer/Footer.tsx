@@ -1,9 +1,7 @@
-import React from 'react';
-
 export const Footer = () => {
-  return (
+  return(
     <footer>
-      <p>Future world</p>
+      <p>Future World</p>
     </footer>
-  );
-};
+  )
+}

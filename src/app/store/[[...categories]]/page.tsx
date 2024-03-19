@@ -1,35 +1,29 @@
-import { ProductsWrapper } from 'app/components';
-import {
-  getCollections,
-  getCollectionsProducts,
-} from 'app/services/shopify/collections';
-import { getProducts } from 'app/services/shopify/products';
-import React from 'react';
+import { ProductsWrapper } from "app/components/Store/ProductsWrapper"
+import { getCollectionProducts, getCollections } from "app/services/shopify/collections"
+import { getProducts } from "app/services/shopify/products"
 
-interface CategoriesProps {
+interface CategoryProps {
   params: {
-    categories: string[];
-    searchParams: string;
-  };
+    categories: string[],
+  }
+  searchParams?: string
 }
 
-export default async function Categories(props: CategoriesProps) {
-  const { categories } = props.params;
-
-  let products = [];
-  const collections = await getCollections();
-
+export default async function Category(props: CategoryProps) {
+  const { categories } = props.params
+  let products = []
+  const collections = await getCollections()
+  
   if (categories?.length > 0) {
-    const selectedCollection = collections.find(
-      (collection: any) => collection.handle === categories[0]
-    );
-    const selectedCollectionId = selectedCollection
-      ? selectedCollection.id
-      : null;
-    products = await getCollectionsProducts(selectedCollectionId);
-  } else {
-    products = await getProducts();
+    const selectedCollectionId = collections.find((collection) => collection.handle === categories[0]).id
+    products = await getCollectionProducts(selectedCollectionId)
+  }else {
+    products = await getProducts()
   }
 
-  return <ProductsWrapper products={products} />;
+  console.log('products', products)
+
+  return (
+    <ProductsWrapper products={products} />
+  )
 }

@@ -1,36 +1,27 @@
-import Link from 'next/link';
-import React from 'react';
-
-const items = [
-  {
-    href: '/',
-    title: 'Home',
-  },
-  {
-    href: '/store',
-    title: 'Store',
-  },
-];
-
-interface Item {
-  href: string;
-  title: string;
-}
+import Link from 'next/link'
+import styles from './Header.module.css'
+import { cookies } from 'next/headers'
 
 export const Header = () => {
+  const cookiesStore = cookies()
+  const token = cookiesStore.get('accessToken')?.value
+
   return (
-    <header className='mt-10'>
+    <header>
       <nav>
-        <ul className='flex-center gap-8'>
-          {items.map((item, index) => (
-            <li className='text-2xl font-semibold text-blue-400' key={index}>
-              <Link href={item.href} scroll={false}>
-                {item.title}
-              </Link>
-            </li>
-          ))}
+        <ul className={styles.Header__list}>
+          <li>
+            <Link href="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/store">
+              Store
+            </Link>
+          </li>
         </ul>
+        {token ? (<p>Hola!</p>) : (<Link href="/login">Login</Link>)}
       </nav>
-    </header>
-  );
-};
+    </header>)
+}
