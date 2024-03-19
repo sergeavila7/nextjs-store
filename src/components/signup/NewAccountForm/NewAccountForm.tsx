@@ -6,9 +6,10 @@ export const NewAccountForm = () => {
   const [errors, setErrors] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
     const formData = new FormData(event.target);
-    handleCreateUser(formData);
+    await handleCreateUser(formData);
   };
 
   return (
@@ -17,25 +18,25 @@ export const NewAccountForm = () => {
       <form className={'styles.NewAccountForm__form'} onSubmit={handleSubmit}>
         <input
           type='text'
-          name='first_name'
+          name='firstName'
           placeholder='Name'
           disabled={loading}
         />
         <input
           type='text'
-          name='last_name'
+          name='lastName'
           placeholder='Lastname'
           disabled={loading}
         />
         <input
-          type='text'
+          type='email'
           name='email'
           placeholder='email'
           pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
           disabled={loading}
         />
         <input
-          type='text'
+          type='number'
           name='phone'
           placeholder='phone number'
           pattern='^[0-9]*$'
