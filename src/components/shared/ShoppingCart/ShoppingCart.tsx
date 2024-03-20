@@ -5,7 +5,7 @@ import { useShoppingCart } from 'app/hooks/useShoppingCart';
 import { ShoppingCartItem } from './ShoppingCartItem';
 import styles from './ShoppingCart.module.sass';
 
-export function ShoppingCart() {
+export default function ShoppingCart() {
   const { cart } = useShoppingCart();
   const [isBuying, setIsBuying] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
