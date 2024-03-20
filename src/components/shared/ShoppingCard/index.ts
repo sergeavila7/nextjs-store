@@ -1,1 +1,0 @@
-export {ShoppingCard} from "./ShoppingCard"
