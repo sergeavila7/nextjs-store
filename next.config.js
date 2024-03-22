@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
-const path = require('path')
+const path = require('path');
 
 const nextConfig = {
   sassOptions: {
@@ -12,9 +15,9 @@ const nextConfig = {
       {
         hostname: 'cdn.shopify.com',
         protocol: 'https',
-      }
-    ]
-  }
-}
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = withBundleAnalyzer(nextConfig);
